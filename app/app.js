@@ -14,10 +14,12 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { ConnectedRouter } from 'connected-react-router';
 import history from 'utils/history';
-import 'sanitize.css/sanitize.css';
 
 // Import root app
 import App from 'containers/App';
+
+// Import Chakra UI
+import { ChakraProvider, ColorModeScript, theme } from '@chakra-ui/react';
 
 // Import Language Provider
 import LanguageProvider from 'containers/LanguageProvider';
@@ -43,7 +45,10 @@ const render = messages => {
     <Provider store={store}>
       <LanguageProvider messages={messages}>
         <ConnectedRouter history={history}>
-          <App />
+          <ColorModeScript />
+          <ChakraProvider theme={theme}>
+            <App />
+          </ChakraProvider>
         </ConnectedRouter>
       </LanguageProvider>
     </Provider>,
