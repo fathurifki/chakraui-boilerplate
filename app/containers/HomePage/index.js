@@ -7,15 +7,18 @@
 
 import React from 'react';
 import { FormattedMessage } from 'react-intl';
+
+import { Heading } from '@chakra-ui/react';
+
 import messages from './messages';
 import { Layout } from '../Layout';
 
 export default function HomePage() {
   return (
     <Layout>
-      <h1>
+      <Heading>
         <FormattedMessage {...messages.header} />
-      </h1>
+      </Heading>
     </Layout>
   );
 }
